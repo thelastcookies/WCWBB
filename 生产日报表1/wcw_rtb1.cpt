@@ -310,12 +310,6 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <Expand/>
 </C>
 <C c="6" r="3" s="5">
-<O t="DSColumn">
-<Attributes dsName="sh_data" columnName="report_state"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Present class="com.fr.base.present.DictPresent">
 <Dictionary class="com.fr.data.impl.CustomDictionary">
@@ -336,10 +330,6 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <Expand/>
 </C>
 <C c="8" r="3" s="6">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=J46]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>

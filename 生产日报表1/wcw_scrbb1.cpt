@@ -274,12 +274,6 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <Expand/>
 </C>
 <C c="6" r="3" s="5">
-<O t="DSColumn">
-<Attributes dsName="sh_data" columnName="report_state"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Present class="com.fr.base.present.DictPresent">
 <Dictionary class="com.fr.data.impl.CustomDictionary">
@@ -300,10 +294,6 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <Expand/>
 </C>
 <C c="8" r="3" s="6">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=J32]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -4160,7 +4150,7 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <C c="1" r="23">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_1fdl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + B4 + "') ", 1, 1)]]></Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_1fdl FROM t_info_wcwrtb WHERE t_time = TIMESTAMP('" + B4 + "') ", 1, 1)]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -4174,7 +4164,7 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <C c="3" r="23">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_2fdl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + B4 + "') ", 1, 1)]]></Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_2fdl FROM t_info_wcwrtb WHERE t_time = TIMESTAMP('" + B4 + "') ", 1, 1)]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>

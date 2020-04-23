@@ -134,7 +134,7 @@
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[1152000,1440000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,722880,0,0,0,0,0,723900]]></RowHeight>
+<![CDATA[1152000,1440000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,1152000,0,0,0,0,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
 <![CDATA[4896000,3168000,3168000,3168000,3600000,3168000,3168000,3168000,3168000,3168000,3168000,3168000,3168000,3168000,3168000,3168000,3168000,2880000,3600000,2743200,3600000,2743200]]></ColumnWidth>
 <CellElementList>
@@ -231,12 +231,6 @@
 <Expand/>
 </C>
 <C c="14" r="2" s="7">
-<O t="DSColumn">
-<Attributes dsName="sh_data" columnName="report_state"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Present class="com.fr.base.present.DictPresent">
 <Dictionary class="com.fr.data.impl.CustomDictionary">
@@ -257,10 +251,6 @@
 <Expand/>
 </C>
 <C c="16" r="2" s="8">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=J15]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>

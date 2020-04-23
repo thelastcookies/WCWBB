@@ -464,7 +464,7 @@ group by a.t_jz]]></Query>
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[1152000,1440000,1440000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,0,0,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,0,0,0,723900]]></RowHeight>
+<![CDATA[1152000,1440000,1440000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,0,0,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,1152000,0,0,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
 <![CDATA[2986560,1645920,3600000,4053600,2592000,3600000,3600000,3600000,0,0,2743200]]></ColumnWidth>
 <CellElementList>
@@ -521,12 +521,6 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="5" r="2" s="7">
-<O t="DSColumn">
-<Attributes dsName="sh_data" columnName="report_state"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Present class="com.fr.base.present.DictPresent">
 <Dictionary class="com.fr.data.impl.CustomDictionary">
@@ -547,10 +541,6 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="7" r="2" s="8">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=J82]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2631,30 +2621,14 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="5" r="54" s="13">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_1rtltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "') ", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
 <C c="6" r="54" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_y" columnName="1机月脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
 <C c="7" r="54" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_n" columnName="1机年脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
@@ -2665,30 +2639,14 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="5" r="55" s="14">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_2rtltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "') ", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
 <C c="6" r="55" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_y" columnName="2机月脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
 <C c="7" r="55" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_n" columnName="2机年脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
@@ -2699,30 +2657,14 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="5" r="56" s="13">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_qcrtltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "') ", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
 <C c="6" r="56" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_y" columnName="全厂月脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
 <C c="7" r="56" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_n" columnName="全厂年脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>

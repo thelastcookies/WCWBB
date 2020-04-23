@@ -238,7 +238,7 @@ where wcw.t_time = '${time}']]></Query>
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[1152000,1440000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,0,0,0,0,0,723900]]></RowHeight>
+<![CDATA[1152000,1440000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,0,0,0,1152000,1152000,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
 <![CDATA[4896000,3168000,3168000,4896000,3168000,3168000,1728000,3168000,3168000,3168000,2743200]]></ColumnWidth>
 <CellElementList>
@@ -307,12 +307,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="6" r="2" cs="2" s="7">
-<O t="DSColumn">
-<Attributes dsName="sh_data" columnName="report_state"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Present class="com.fr.base.present.DictPresent">
 <Dictionary class="com.fr.data.impl.CustomDictionary">
@@ -333,10 +327,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="9" r="2" s="7">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=J21]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>

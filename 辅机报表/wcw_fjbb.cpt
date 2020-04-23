@@ -74,6 +74,7 @@ and t_hour = '10:00'
 <ToolBar>
 <Widget class="com.fr.report.web.button.NewPrint">
 <WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -83,6 +84,7 @@ and t_hour = '10:00'
 </Widget>
 <Widget class="com.fr.report.web.button.Export">
 <WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -93,6 +95,7 @@ and t_hour = '10:00'
 </Widget>
 <Widget class="com.fr.report.web.button.Email">
 <WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -114,7 +117,7 @@ and t_hour = '10:00'
 </ReportWebAttr>
 <ReportFitAttr fitStateInPC="3" fitFont="false"/>
 <ElementCaseMobileAttr>
-<ElementCaseMobileAttrProvider horizontal="1" vertical="1" zoom="true" refresh="false" isUseHTML="false" isMobileCanvasSize="false" appearRefresh="false" allowFullScreen="false"/>
+<ElementCaseMobileAttrProvider horizontal="1" vertical="1" zoom="true" refresh="false" isUseHTML="false" isMobileCanvasSize="false" appearRefresh="false" allowFullScreen="false" allowDoubleClickOrZoom="true" functionalWhenUnactivated="false"/>
 </ElementCaseMobileAttr>
 <Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
 <ReportPageAttr>
@@ -223,12 +226,6 @@ and t_hour = '10:00'
 <Expand/>
 </C>
 <C c="15" r="2" s="7">
-<O t="DSColumn">
-<Attributes dsName="sh_data" columnName="report_state"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Present class="com.fr.base.present.DictPresent">
 <Dictionary class="com.fr.data.impl.CustomDictionary">
@@ -249,10 +246,6 @@ and t_hour = '10:00'
 <Expand/>
 </C>
 <C c="17" r="2" s="7">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=J32]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -22715,6 +22708,7 @@ and t_hour = '10:00'
 </JavaScript>
 </Listener>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -22743,6 +22737,7 @@ this.setEnable(false);
 </JavaScript>
 </Listener>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -22799,6 +22794,8 @@ this.setEnable(false);
 <ColumnRow column="4" row="31"/>
 </ColumnConfig>
 <Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
 <CNAME>
 <![CDATA[report_state]]></CNAME>
 <Compare op="5">
@@ -22820,6 +22817,7 @@ this.setEnable(false);
 <Layout class="com.fr.form.ui.container.WParameterLayout">
 <WidgetName name="para"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Margin top="0" left="0" bottom="0" right="0"/>
@@ -22839,6 +22837,7 @@ this.setEnable(false);
 <InnerWidget class="com.fr.form.ui.Label">
 <WidgetName name="Labeltime_c_c_c_c_c_c_c_c_c_c_c"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue>
@@ -22856,6 +22855,7 @@ this.setEnable(false);
 <WidgetName name="time"/>
 <LabelName name="日期:"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <DateAttr enddatefm="=today()"/>
@@ -22872,6 +22872,7 @@ this.setEnable(false);
 <InnerWidget class="com.fr.form.parameter.FormSubmitButton">
 <WidgetName name="Search_c_c_c_c_c_c_c_c_c_c_c"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -22881,11 +22882,14 @@ this.setEnable(false);
 </InnerWidget>
 <BoundsAttr x="216" y="20" width="80" height="21"/>
 </Widget>
+<ShowBookmarks showBookmarks="true"/>
 <Sorted sorted="false"/>
 <MobileWidgetList>
 <Widget widgetName="time"/>
 <Widget widgetName="Search_c_c_c_c_c_c_c_c_c_c_c"/>
 </MobileWidgetList>
+<FrozenWidgets/>
+<MobileBookMarkStyle class="com.fr.form.ui.mobile.impl.DefaultMobileBookMarkStyle"/>
 <Display display="true"/>
 <DelayDisplayContent delay="false"/>
 <UseParamsTemplate use="true"/>

@@ -277,12 +277,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="6" r="2" cs="2" s="7">
-<O t="DSColumn">
-<Attributes dsName="sh_data" columnName="report_state"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Present class="com.fr.base.present.DictPresent">
 <Dictionary class="com.fr.data.impl.CustomDictionary">
@@ -303,10 +297,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="9" r="2" s="7">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=J21]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>

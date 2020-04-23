@@ -492,12 +492,6 @@ and year(t_time) = year('${time}')]]></Query>
 <Expand/>
 </C>
 <C c="6" r="2" s="6">
-<O t="DSColumn">
-<Attributes dsName="sh_data" columnName="report_state"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Present class="com.fr.base.present.DictPresent">
 <Dictionary class="com.fr.data.impl.CustomDictionary">
@@ -518,10 +512,6 @@ and year(t_time) = year('${time}')]]></Query>
 <Expand/>
 </C>
 <C c="8" r="2" s="7">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=J87]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -19764,7 +19754,7 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="5" r="79" s="4">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=year($time) + '-' + month($time) + '-29']]></Attributes>
+<![CDATA[=if(DATEINYEAR(year($time) + '-' + month($time) + '-29') == DATEINYEAR(today()), null, year($time) + '-' + month($time) + '-29')]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -19772,7 +19762,7 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="6" r="79" s="4">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=year($time) + '-' + month($time) + '-30']]></Attributes>
+<![CDATA[=if(DATEINYEAR(year($time) + '-' + month($time) + '-30') == DATEINYEAR(today()), null, year($time) + '-' + month($time) + '-30')]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -19780,7 +19770,7 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="7" r="79" s="4">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=year($time) + '-' + month($time) + '-31']]></Attributes>
+<![CDATA[=if(DATEINYEAR(year($time) + '-' + month($time) + '-31') == DATEINYEAR(today()), null, year($time) + '-' + month($time) + '-31')]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>

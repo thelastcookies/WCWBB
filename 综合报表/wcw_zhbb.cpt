@@ -503,12 +503,6 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="5" r="2" s="7">
-<O t="DSColumn">
-<Attributes dsName="sh_data" columnName="report_state"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <Present class="com.fr.base.present.DictPresent">
 <Dictionary class="com.fr.data.impl.CustomDictionary">
@@ -529,10 +523,6 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="7" r="2" s="8">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=J81]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -10719,12 +10709,6 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="5" r="54" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_r" columnName="1机日脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -10783,12 +10767,6 @@ group by a.t_jz]]></Query>
 <Expand dir="0"/>
 </C>
 <C c="6" r="54" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_y" columnName="1机月脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -10847,12 +10825,6 @@ group by a.t_jz]]></Query>
 <Expand dir="0"/>
 </C>
 <C c="7" r="54" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_n" columnName="1机年脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -10917,12 +10889,6 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="5" r="55" s="11">
-<O t="DSColumn">
-<Attributes dsName="ds_r" columnName="2机日脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -10981,12 +10947,6 @@ group by a.t_jz]]></Query>
 <Expand dir="0"/>
 </C>
 <C c="6" r="55" s="11">
-<O t="DSColumn">
-<Attributes dsName="ds_y" columnName="2机月脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -11045,12 +11005,6 @@ group by a.t_jz]]></Query>
 <Expand dir="0"/>
 </C>
 <C c="7" r="55" s="11">
-<O t="DSColumn">
-<Attributes dsName="ds_n" columnName="2机年脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -11115,12 +11069,6 @@ group by a.t_jz]]></Query>
 <Expand/>
 </C>
 <C c="5" r="56" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_r" columnName="全厂日脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -11179,12 +11127,6 @@ group by a.t_jz]]></Query>
 <Expand dir="0"/>
 </C>
 <C c="6" r="56" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_y" columnName="全厂月脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -11243,12 +11185,6 @@ group by a.t_jz]]></Query>
 <Expand dir="0"/>
 </C>
 <C c="7" r="56" s="12">
-<O t="DSColumn">
-<Attributes dsName="ds_n" columnName="全厂年脱硫"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -12544,7 +12480,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="5" r="63" s="11">
 <O t="DSColumn">
-<Attributes dsName="ds_r" columnName="1机日蒸发量"/>
+<Attributes dsName="接口数据" columnName="zfl1"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -12608,7 +12544,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="6" r="63" s="11">
 <O t="DSColumn">
-<Attributes dsName="ds_y" columnName="1机月蒸发量"/>
+<Attributes dsName="接口数据" columnName="zfl11"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -12672,7 +12608,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="7" r="63" s="11">
 <O t="DSColumn">
-<Attributes dsName="ds_n" columnName="1机年蒸发量"/>
+<Attributes dsName="接口数据" columnName="zfl111"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -12742,7 +12678,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="5" r="64" s="12">
 <O t="DSColumn">
-<Attributes dsName="ds_r" columnName="2机日蒸发量"/>
+<Attributes dsName="接口数据" columnName="zfl2"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -12806,7 +12742,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="6" r="64" s="12">
 <O t="DSColumn">
-<Attributes dsName="ds_y" columnName="2机月蒸发量"/>
+<Attributes dsName="接口数据" columnName="zfl22"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -12870,7 +12806,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="7" r="64" s="12">
 <O t="DSColumn">
-<Attributes dsName="ds_n" columnName="2机年蒸发量"/>
+<Attributes dsName="接口数据" columnName="zfl222"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13150,7 +13086,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="5" r="66" s="11">
 <O t="DSColumn">
-<Attributes dsName="ds_r" columnName="1机日补水率"/>
+<Attributes dsName="接口数据" columnName="bsl1"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13214,7 +13150,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="6" r="66" s="11">
 <O t="DSColumn">
-<Attributes dsName="ds_y" columnName="1机月补水率"/>
+<Attributes dsName="接口数据" columnName="bsl11"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13278,7 +13214,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="7" r="66" s="11">
 <O t="DSColumn">
-<Attributes dsName="ds_n" columnName="1机年补水率"/>
+<Attributes dsName="接口数据" columnName="bsl111"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13348,7 +13284,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="5" r="67" s="12">
 <O t="DSColumn">
-<Attributes dsName="ds_r" columnName="2机日补水率"/>
+<Attributes dsName="接口数据" columnName="bsl2"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13412,7 +13348,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="6" r="67" s="12">
 <O t="DSColumn">
-<Attributes dsName="ds_y" columnName="2机月补水率"/>
+<Attributes dsName="接口数据" columnName="bsl22"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13476,7 +13412,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="7" r="67" s="12">
 <O t="DSColumn">
-<Attributes dsName="ds_n" columnName="2机年补水率"/>
+<Attributes dsName="接口数据" columnName="bsl222"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13756,7 +13692,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="5" r="69" s="12">
 <O t="DSColumn">
-<Attributes dsName="ds_r" columnName="1机日运行小时"/>
+<Attributes dsName="接口数据" columnName="xss1"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13820,7 +13756,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="6" r="69" s="12">
 <O t="DSColumn">
-<Attributes dsName="ds_y" columnName="1机月运行小时"/>
+<Attributes dsName="接口数据" columnName="xss11"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13884,7 +13820,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="7" r="69" s="12">
 <O t="DSColumn">
-<Attributes dsName="ds_n" columnName="1机年运行小时"/>
+<Attributes dsName="接口数据" columnName="xss111"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -13954,7 +13890,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="5" r="70" s="11">
 <O t="DSColumn">
-<Attributes dsName="ds_r" columnName="2机日运行小时"/>
+<Attributes dsName="接口数据" columnName="xss2"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -14018,7 +13954,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="6" r="70" s="11">
 <O t="DSColumn">
-<Attributes dsName="ds_y" columnName="2机月运行小时"/>
+<Attributes dsName="接口数据" columnName="xss22"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -14082,7 +14018,7 @@ group by a.t_jz]]></Query>
 </C>
 <C c="7" r="70" s="11">
 <O t="DSColumn">
-<Attributes dsName="ds_n" columnName="2机年运行小时"/>
+<Attributes dsName="接口数据" columnName="xss222"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
