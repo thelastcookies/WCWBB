@@ -1718,10 +1718,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="1" r="9" s="9">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_1fdcydl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -1801,12 +1797,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="4" r="9" s="10">
-<O t="DSColumn">
-<Attributes dsName="y" columnName="1机月供热厂用"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -1877,12 +1867,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="8" r="9" s="10">
-<O t="DSColumn">
-<Attributes dsName="n" columnName="1机年供热厂用"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -1953,10 +1937,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="1" r="10" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=B10 / B4 * 100]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2027,10 +2007,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="4" r="10" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=E10 / E4 * 100]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2101,10 +2077,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="8" r="10" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=I10 / I4 * 100]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2175,10 +2147,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="1" r="11" s="9">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_2fdcydl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -2258,12 +2226,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="4" r="11" s="10">
-<O t="DSColumn">
-<Attributes dsName="y" columnName="2机月供热厂用"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2334,12 +2296,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="8" r="11" s="10">
-<O t="DSColumn">
-<Attributes dsName="n" columnName="2机年供热厂用"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2410,10 +2366,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="1" r="12" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=B12 / B5 * 100]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2484,10 +2436,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="4" r="12" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=E12 / E5 * 100]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2558,10 +2506,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="8" r="12" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=I12 / I5 * 100]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2632,10 +2576,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="1" r="13" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=B10 + B12]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2706,10 +2646,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="4" r="13" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=E10 + E12]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2780,10 +2716,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="8" r="13" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=I10 + I12]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2854,10 +2786,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="1" r="14" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=B14 / B6 * 100]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -2928,10 +2856,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="4" r="14" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=E14 / E6 * 100]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -3002,10 +2926,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="8" r="14" s="10">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=I14 / I6 * 100]]></Attributes>
-</O>
 <PrivilegeControl/>
 <HighlightList>
 <Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
@@ -8956,10 +8876,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="1" r="41" s="9">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_1rtltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -9039,10 +8955,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="4" r="41" s="9">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_1ytltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -9122,10 +9034,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="8" r="41" s="9">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_1ntltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -9205,10 +9113,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="1" r="42" s="11">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_2rtltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -9288,10 +9192,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="4" r="42" s="11">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_2ytltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -9371,10 +9271,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="8" r="42" s="11">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_2ntltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -9454,10 +9350,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="1" r="43" s="9">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_qcrtltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -9537,10 +9429,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="4" r="43" s="9">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_qcytltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">
@@ -9620,10 +9508,6 @@ where wcw.t_time = '${time}']]></Query>
 <Expand/>
 </C>
 <C c="8" r="43" s="9">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_qcntltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "')", 1, 1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.NumberEditor">
 <WidgetAttr disabled="true" description="">

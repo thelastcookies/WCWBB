@@ -4160,7 +4160,7 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <C c="1" r="23">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_1fdl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + B4 + "') ", 1, 1)]]></Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_1fdl FROM t_info_wcwrtb WHERE t_time = TIMESTAMP('" + B4 + "') ", 1, 1)]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -4174,7 +4174,7 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <C c="3" r="23">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=SQL("JDBC2", "SELECT t_2fdl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + B4 + "') ", 1, 1)]]></Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_2fdl FROM t_info_wcwrtb WHERE t_time = TIMESTAMP('" + B4 + "') ", 1, 1)]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
