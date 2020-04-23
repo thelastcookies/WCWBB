@@ -1,0 +1,2239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20170720" releaseVersion="10.0.0">
+<TableDataMap>
+<TableData name="sh_data" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT id_key, report_state, auditor FROM t_info_reportstate WHERE report_id = 'wcw_scrbb1' and report_date = '${date}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="tb_data" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT id_key as '填报数据ID', t_tbr as '填报人' FROM t_info_scrbb1 WHERE t_time = '${date}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="n" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+max(rb2.t_1zdfh) as '1机年最大负荷',
+max(rb2.t_2zdfh) as '2机年最大负荷',
+max(rb2.t_zdfh) as '厂最大负荷',
+min(rb2.t_1zxfh) as '1机年最小负荷',
+min(rb2.t_2zxfh) as '2机年最小负荷',
+min(rb2.t_zxfh) as '厂年最小负荷',
+sum(rb2.t_1pdml) as '1机年皮带煤量',
+sum(rb2.t_2pdml) as '2机年皮带煤量'
+from t_info_scrbb1 as rb1
+right join t_info_scrbb2 as rb2
+on rb1.t_time = rb2.t_time
+right join t_info_wcwrtb as wcw
+on rb2.t_time = wcw.t_time
+where wcw.t_time < '${date}'
+and year(wcw.t_time) = year('${date}')]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="r" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+rb2.t_1zdfh as '1机日最大负荷',
+rb2.t_2zdfh as '2机日最大负荷',
+rb2.t_zdfh as '厂最大负荷',
+rb2.t_1zxfh as '1机日最小负荷',
+rb2.t_2zxfh as '2机日最小负荷',
+rb2.t_zxfh as '厂日最小负荷',
+rb2.t_1pdml as '1机日皮带煤量',
+rb2.t_2pdml as '2机日皮带煤量',
+wcw.t_1ryl as '1机日用油',
+wcw.t_2ryl as '2机日用油',
+t_1zfl as '1机日蒸发',
+t_2zfl as '2机日蒸发',
+t_1yxxss as '1机日运行小时',
+t_2yxxss as '2机日运行小时',
+wcw.t_1tlxl as '1机日脱硫效率',
+wcw.t_2tlxl as '2机日脱硫效率',
+wcw.t_tlxl as '厂日脱硫效率',
+wcw.t_mccml as '日存煤',
+wcw.t_cyl as '日存油',
+wcw.t_jcmrz as '煤前发热',
+wcw.t_jcyml as '日来煤',
+wcw.t_jcryl as '日来油',
+t_1bsl as '1机日补水',
+t_2bsl as '2机日补水',
+t_1pjzk as '1机真空',
+t_2pjzk as '2机真空',
+t_1mjds as '1机煤机读数',
+t_2mjds as '2机煤机读数',
+t_qctlysl as '厂日脱硫用水'
+from t_info_scrbb1 as rb1
+right join t_info_scrbb2 as rb2
+on rb1.t_time = rb2.t_time
+right join t_info_wcwrtb as wcw
+on rb2.t_time = wcw.t_time
+where wcw.t_time = '${date}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="y" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+max(rb2.t_1zdfh) as '1机月最大负荷',
+max(rb2.t_2zdfh) as '2机月最大负荷',
+max(rb2.t_zdfh) as '厂最大负荷',
+min(rb2.t_1zxfh) as '1机月最小负荷',
+min(rb2.t_2zxfh) as '2机月最小负荷',
+min(rb2.t_zxfh) as '厂月最小负荷',
+sum(rb2.t_1pdml) as '1机月皮带煤量',
+sum(rb2.t_2pdml) as '2机月皮带煤量'
+from t_info_scrbb1 as rb1
+right join t_info_scrbb2 as rb2
+on rb1.t_time = rb2.t_time
+right join t_info_wcwrtb as wcw
+on rb2.t_time = wcw.t_time
+where wcw.t_time < '${date}'
+and month(wcw.t_time) = month('${date}')
+and year(wcw.t_time) = year('${date}')]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebWriteContent>
+<Listener event="writesuccess">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[FR.i18n['Fine-Engine_Report_Successfully']A='成功！';
+setTimeout(function(){ location.reload(); }, 1000);]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.button.write.Verify">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Fine-Engine_Report_Verify_Data')}]]></Text>
+<IconName>
+<![CDATA[verify]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.NewPrint">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Fine-Engine_Print')}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.Export">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Export')}]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true" image="true" html="true"/>
+</Widget>
+<Widget class="com.fr.report.web.button.Email">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Fine-Engine_Report_Email')}]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+<EmailButton customConsignee="true" consigneeByDepartment="false" consigneeByRole="false"/>
+</Widget>
+<Widget class="com.fr.report.web.button.write.AppendColumnRow">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Fine-Engine_Add_Record')}]]></Text>
+<IconName>
+<![CDATA[appendrow]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.write.ShowCellValue">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+<LabelAttr verticalcenter="true" textalign="0" autoline="false"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<EditRowColor setColor="false"/>
+<WebWrite SheetPosition="3"/>
+<RptLocation isShowAtLeft="false"/>
+<UnloadCheck/>
+<ShowWidgets/>
+<OtherAttr autoStash="false"/>
+</WebWriteContent>
+</ReportWebAttr>
+<ElementCaseMobileAttr>
+<ElementCaseMobileAttrProvider horizontal="1" vertical="1" zoom="true" refresh="false" isUseHTML="false" isMobileCanvasSize="false" appearRefresh="false" allowFullScreen="false" allowDoubleClickOrZoom="true" functionalWhenUnactivated="false"/>
+</ElementCaseMobileAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1008000,1440000,1440000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[4032000,4032000,4032000,4032000,4032000,4032000,4032000,4032000,4032000,0,4608000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" cs="3" s="0">
+<O>
+<![CDATA[国电投五彩湾北二电厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="1" cs="2" s="1">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=YEAR(today())+'年'+MONTH(today())+'月'+DAY(today())+'日']]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" cs="9" s="2">
+<O>
+<![CDATA[五彩湾电厂生产日报表（一）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" s="3">
+<O>
+<![CDATA[制表日期：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="3" cs="4" s="4">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$date]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="3" s="3">
+<O>
+<![CDATA[审核状态：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" s="5">
+<O t="DSColumn">
+<Attributes dsName="sh_data" columnName="report_state"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="-1" value="回退"/>
+<Dict key="0" value="未审核"/>
+<Dict key="1" value="已提交"/>
+<Dict key="2" value="已审核"/>
+</CustomDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="7" r="3" s="3">
+<O>
+<![CDATA[审核人员：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" s="6">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=J46]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" s="7">
+<O>
+<![CDATA[1号机日最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="4" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机日最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="4" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="4" s="7">
+<O>
+<![CDATA[1号机月最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="4" s="8">
+<O t="DSColumn">
+<Attributes dsName="y" columnName="1机月最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="4" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="4" s="7">
+<O>
+<![CDATA[1号机年最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="4" s="8">
+<O t="DSColumn">
+<Attributes dsName="n" columnName="1机年最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="4" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="5" s="7">
+<O>
+<![CDATA[2号机日最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="5" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机日最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="5" s="7">
+<O>
+<![CDATA[2号机月最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="5" s="8">
+<O t="DSColumn">
+<Attributes dsName="y" columnName="2机月最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="5" s="7">
+<O>
+<![CDATA[2号机年最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="5" s="8">
+<O t="DSColumn">
+<Attributes dsName="n" columnName="2机年最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="5" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="6" s="7">
+<O>
+<![CDATA[全厂日最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="6" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="厂最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="6" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="6" s="7">
+<O>
+<![CDATA[全厂月最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="6" s="8">
+<O t="DSColumn">
+<Attributes dsName="y" columnName="厂最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="6" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="6" s="7">
+<O>
+<![CDATA[全厂年最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="6" s="8">
+<O t="DSColumn">
+<Attributes dsName="n" columnName="厂最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="6" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="7" s="7">
+<O>
+<![CDATA[1号机日最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="7" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机日最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="7" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="7" s="7">
+<O>
+<![CDATA[1号机月最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="7" s="8">
+<O t="DSColumn">
+<Attributes dsName="y" columnName="1机月最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="7" s="7">
+<O>
+<![CDATA[1号机年最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="7" s="8">
+<O t="DSColumn">
+<Attributes dsName="n" columnName="1机年最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="8" s="7">
+<O>
+<![CDATA[2号机日最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机日最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="8" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="8" s="7">
+<O>
+<![CDATA[2号机月最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="y" columnName="2机月最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="8" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="8" s="7">
+<O>
+<![CDATA[2号机年最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="n" columnName="2机年最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="8" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="9" s="7">
+<O>
+<![CDATA[全厂日最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="9" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="厂日最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="9" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="9" s="7">
+<O>
+<![CDATA[全厂月最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="9" s="8">
+<O t="DSColumn">
+<Attributes dsName="y" columnName="厂月最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="9" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="9" s="7">
+<O>
+<![CDATA[全厂年最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="9" s="8">
+<O t="DSColumn">
+<Attributes dsName="n" columnName="厂年最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="9" s="7">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="10" s="7">
+<O>
+<![CDATA[1号炉皮带秤日用煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机日皮带煤量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="10" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="10" s="7">
+<O>
+<![CDATA[1号炉皮带秤月用煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="y" columnName="1机月皮带煤量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="10" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="10" s="7">
+<O>
+<![CDATA[1号炉皮带秤年用煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="n" columnName="1机年皮带煤量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="10" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="11" s="7">
+<O>
+<![CDATA[2号炉皮带秤日用煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="11" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机日皮带煤量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="11" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="11" s="7">
+<O>
+<![CDATA[2号炉皮带秤月用煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="11" s="8">
+<O t="DSColumn">
+<Attributes dsName="y" columnName="2机月皮带煤量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="11" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="11" s="7">
+<O>
+<![CDATA[2号炉皮带秤年用煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="11" s="8">
+<O t="DSColumn">
+<Attributes dsName="n" columnName="2机年皮带煤量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="11" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="12" s="7">
+<O>
+<![CDATA[全厂皮带秤日用煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="12" s="8">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SUM(B11:B12)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand extendable="3" leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="2" r="12" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="12" s="7">
+<O>
+<![CDATA[全厂皮带秤月用煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="12" s="8">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SUM(E11:E12)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand extendable="3" leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="5" r="12" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="12" s="7">
+<O>
+<![CDATA[全厂皮带秤年用煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="12" s="8">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SUM(H11:H12)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand extendable="3" leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="8" r="12" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="13" s="7">
+<O>
+<![CDATA[1号炉日用油]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="13" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机日用油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="13" s="7">
+<O>
+<![CDATA[%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="13" s="7">
+<O>
+<![CDATA[1号机日蒸发量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="13" s="9">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机日蒸发"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="5" r="13" s="7">
+<O>
+<![CDATA[万吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="13" s="7">
+<O>
+<![CDATA[1号机日运行小时数]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="13" s="9">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机日运行小时"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="13" s="7">
+<O>
+<![CDATA[h]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="14" s="7">
+<O>
+<![CDATA[2号炉日用油]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="14" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机日用油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="14" s="7">
+<O>
+<![CDATA[%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="14" s="7">
+<O>
+<![CDATA[2号机日蒸发量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="14" s="10">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机日蒸发"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="5" r="14" s="7">
+<O>
+<![CDATA[万吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="14" s="7">
+<O>
+<![CDATA[2号机日运行小时数]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="14" s="10">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机日运行小时"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="14" s="7">
+<O>
+<![CDATA[h]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="15" s="7">
+<O>
+<![CDATA[1号机日脱硫效率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="15" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机日脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="15" s="7">
+<O>
+<![CDATA[%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="15" s="7">
+<O>
+<![CDATA[煤厂存煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="15" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="日存煤"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="15" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="15" s="7">
+<O>
+<![CDATA[1号机平均真空]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="15" s="9">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机真空"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="15" s="7">
+<O>
+<![CDATA[kpa]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="16" s="7">
+<O>
+<![CDATA[2号机日脱硫效率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="16" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机日脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="16" s="7">
+<O>
+<![CDATA[%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="16" s="7">
+<O>
+<![CDATA[煤厂存油量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="16" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="日存油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="16" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="16" s="7">
+<O>
+<![CDATA[2号机平均真空]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="16" s="11">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机真空"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="16" s="7">
+<O>
+<![CDATA[kpa]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="17" s="7">
+<O>
+<![CDATA[全厂日脱硫效率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="17" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="厂日脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="17" s="7">
+<O>
+<![CDATA[%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="17" s="7">
+<O>
+<![CDATA[炉前煤低位发热量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="17" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="煤前发热"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="17" s="7">
+<O>
+<![CDATA[MJ/kg]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="17" s="7">
+<O>
+<![CDATA[全厂脱硫用水量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="17" s="9">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="厂日脱硫用水"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="17" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="18" s="7">
+<O>
+<![CDATA[日来煤]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="18" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="日来煤"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="18" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="18" s="7">
+<O>
+<![CDATA[1号机日补水量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="18" s="9">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机日补水"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="5" r="18" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="18" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="18" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="18" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="19" s="7">
+<O>
+<![CDATA[日来油]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="19" s="8">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="日来油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="19" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="19" s="7">
+<O>
+<![CDATA[2号机日补水量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="19" s="11">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机日补水"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="5" r="19" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="19" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="19" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="19" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="20" s="7">
+<O>
+<![CDATA[1号炉总给煤机读数]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="20" s="9">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="1机煤机读数"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr>
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="2" r="20" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="20" s="7">
+<O>
+<![CDATA[2号炉总给煤机读数]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="20" s="9">
+<O t="DSColumn">
+<Attributes dsName="r" columnName="2机煤机读数"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr maxDecimalLength="3">
+<watermark>
+<![CDATA[请填写]]></watermark>
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="5" r="20" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="20" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="20" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="20" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="21" s="7">
+<O>
+<![CDATA[1号炉昨日总给煤机读数]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="21" s="8">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_1mjds FROM t_info_scrbb1 WHERE t_time = DATE_SUB(TIMESTAMP('" + B4 + "') ,INTERVAL 1 DAY)", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="21" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="21" s="7">
+<O>
+<![CDATA[2号炉昨日总给煤机读数]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="21" s="11">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_2mjds FROM t_info_scrbb1 WHERE t_time = DATE_SUB(TIMESTAMP('" + B4 + "') ,INTERVAL 1 DAY)", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="21" s="7">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="21" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="21" s="13">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="21" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="22" s="14">
+<O>
+<![CDATA[1/1]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="27" s="15">
+<PrivilegeControl/>
+<HighlightList>
+<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="1">
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="1">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[F46 = "0004"]]></Formula>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[C46 <= 0]]></Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+</JoinCondition>
+<JoinCondition join="1">
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="1">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[F46 = "0003"]]></Formula>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[C46 = 0]]></Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+</JoinCondition>
+</Condition>
+<HighlightAction class="com.fr.report.cell.cellattr.highlight.RowHeightHighlightAction">
+<RowHeight i="1152000"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="1" r="27" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="27" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="27" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="27" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="27" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="27" s="16">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.FreeButton">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[重置]]></Text>
+<initial>
+<Background name="ColorBackground" color="-8947849"/>
+</initial>
+<isCustomType isCustomType="true"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="27" s="16">
+<O>
+<![CDATA[提交]]></O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.FreeButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[_g('${sessionID}').writeReport(); 
+this.setEnable(false);
+
+]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[提交]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+<initial>
+<Background name="ColorBackground" color="-16745788"/>
+</initial>
+<isCustomType isCustomType="true"/>
+</Widget>
+<Expand/>
+</C>
+<C c="0" r="44" s="17">
+<O>
+<![CDATA[当前填报数据ID：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="44" s="17">
+<O>
+<![CDATA[填报对应报表ID：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="44" s="17">
+<O>
+<![CDATA[当前状态：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="44" s="17">
+<O>
+<![CDATA[下一个状态：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="44" s="17">
+<O>
+<![CDATA[当前人员ID：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="44" s="17">
+<O>
+<![CDATA[当前人员角色]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="44" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="44" s="17">
+<O>
+<![CDATA[审核人员ID：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="44" s="17">
+<O>
+<![CDATA[审核人员角色]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="44" s="17">
+<O>
+<![CDATA[审核人员名字]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="45" s="17">
+<O t="DSColumn">
+<Attributes dsName="tb_data" columnName="填报数据ID"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="1" r="45" s="17">
+<O t="DSColumn">
+<Attributes dsName="sh_data" columnName="id_key"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="45" s="17">
+<O t="DSColumn">
+<Attributes dsName="sh_data" columnName="report_state"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="45" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=C46 + 1]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="45" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$userid]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="45" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_grpid FROM t_sys_roleuser WHERE t_userid = '" + E46 + "'", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="45" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="45" s="17">
+<O t="DSColumn">
+<Attributes dsName="sh_data" columnName="auditor"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="45" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_grpid FROM t_sys_roleuser WHERE t_userid = '" + H46 + "'", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="45" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_username FROM t_sys_user WHERE t_userid = '" + H46 + "'", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="46" s="17">
+<O>
+<![CDATA[填报人]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="47" s="17">
+<O t="DSColumn">
+<Attributes dsName="tb_data" columnName="填报人"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="49">
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting orientation="1">
+<PaperSize width="48960000" height="46080000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+<Background name="ColorBackground" color="-1"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<ReportWriteAttr>
+<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
+<Name>
+<![CDATA[内置SQL1]]></Name>
+<Attributes dsName="JDBC2"/>
+<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
+<Table schema="" name="t_info_scrbb1"/>
+<ColumnConfig name="t_time" isKey="true" skipUnmodified="false">
+<ColumnRow column="1" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="t_tbr" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="45"/>
+</ColumnConfig>
+<ColumnConfig name="t_1zfl" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="t_2zfl" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="t_1yxxss" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="t_2yxxss" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="t_1bsl" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="18"/>
+</ColumnConfig>
+<ColumnConfig name="t_2bsl" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="19"/>
+</ColumnConfig>
+<ColumnConfig name="t_1pjzk" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="15"/>
+</ColumnConfig>
+<ColumnConfig name="t_2pjzk" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="16"/>
+</ColumnConfig>
+<ColumnConfig name="t_1mjds" isKey="false" skipUnmodified="false">
+<ColumnRow column="1" row="20"/>
+</ColumnConfig>
+<ColumnConfig name="t_2mjds" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="20"/>
+</ColumnConfig>
+<ColumnConfig name="t_qctlysl" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="17"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition"/>
+</DMLConfig>
+</SubmitVisitor>
+<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
+<Name>
+<![CDATA[内置SQL2]]></Name>
+<Attributes dsName="JDBC2"/>
+<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
+<Table schema="" name="t_info_reportstate"/>
+<ColumnConfig name="id_key" isKey="true" skipUnmodified="false">
+<ColumnRow column="1" row="45"/>
+</ColumnConfig>
+<ColumnConfig name="report_state" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="45"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[C46 == -1]]></Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+</DMLConfig>
+</SubmitVisitor>
+</ReportWriteAttr>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0" useParamsTemplate="true"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Parameters/>
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="0" left="0" bottom="0" right="0"/>
+<Border>
+<border style="0" color="-723724" borderRadius="0" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新建标题]]></O>
+<FRFont name="SimSun" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-526086"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.Label">
+<WidgetName name="Labeltime"/>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue>
+<O>
+<![CDATA[日期:]]></O>
+</widgetValue>
+<LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</InnerWidget>
+<BoundsAttr x="20" y="20" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.DateEditor">
+<WidgetName name="date"/>
+<LabelName name="日期:"/>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<DateAttr enddatefm="=today()"/>
+<widgetValue>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=today()]]></Attributes>
+</O>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="100" y="20" width="94" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.parameter.FormSubmitButton">
+<WidgetName name="Search"/>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[查询]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</InnerWidget>
+<BoundsAttr x="216" y="20" width="80" height="21"/>
+</Widget>
+<ShowBookmarks showBookmarks="true"/>
+<Sorted sorted="false"/>
+<MobileWidgetList>
+<Widget widgetName="date"/>
+<Widget widgetName="Search"/>
+</MobileWidgetList>
+<FrozenWidgets/>
+<MobileBookMarkStyle class="com.fr.form.ui.mobile.impl.DefaultMobileBookMarkStyle"/>
+<Display display="true"/>
+<DelayDisplayContent delay="false"/>
+<UseParamsTemplate use="true"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
+<NameTagModified/>
+<WidgetNameTagMap/>
+<ParamAttr class="com.fr.report.mobile.DefaultMobileParamStyle"/>
+</Layout>
+<DesignAttr width="960" height="80"/>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="1" size="88"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="SimSun" style="1" size="88"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="112"/>
+<Background name="ColorBackground" color="-7427621"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="SimSun" style="0" size="88"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="0" size="88" foreground="-16770364"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="0" size="88" foreground="-16770364"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-4144960"/>
+<Bottom style="2" color="-4144960"/>
+<Left style="2" color="-4144960"/>
+<Right style="2" color="-4144960"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="88"/>
+<Background name="ColorBackground" color="-2498062"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="88"/>
+<Background name="ColorBackground" color="-855310"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="88"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="88"/>
+<Background name="ColorBackground" color="-1904678"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="88"/>
+<Background name="ColorBackground" color="-1773860"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-2498062"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="80"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="0" size="88" foreground="-1"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="KAA"/>
+<PreviewType PreviewType="1"/>
+<TemplateIdAttMark class="com.fr.base.iofile.attr.TemplateIdAttrMark">
+<TemplateIdAttMark TemplateId="a4c77ace-46c2-45bf-809f-4ba5c941eb89"/>
+</TemplateIdAttMark>
+</WorkBook>

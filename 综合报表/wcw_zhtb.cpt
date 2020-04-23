@@ -1,0 +1,4145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20170720" releaseVersion="10.0.0">
+<TableDataMap>
+<TableData name="ds_r" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="time"/>
+<O>
+<![CDATA[2020-04-21]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select wcw.t_time,
+wcw.t_1fdl as '1机日发电量',
+wcw.t_2fdl as '2机日发电量',
+wcw.t_1swdl as '1机日上网电量',
+wcw.t_2swdl as '2机日上网电量', 
+wcw.t_1fdcydl as '1机日厂用',
+wcw.t_2fdcydl as '2机日厂用',
+wcw.t_1zhcydl as '1机日综合厂用',
+wcw.t_2zhcydl as '2机日综合厂用',
+wcw.t_1fdbmh as '1机日发电煤耗',
+wcw.t_2fdbmh as '2机日发电煤耗',
+wcw.t_fdbmh as '厂日发电煤耗',
+wcw.t_1gdbmh as '1机日供电煤耗',
+wcw.t_2gdbmh as '2机日供电煤耗',
+wcw.t_gdbmh as '厂日供电煤耗',
+wcw.t_1avgfhl as '1机日负荷率',
+wcw.t_2avgfhl as '2机日负荷率',
+rb2.t_1zdfh as '1机日最大负荷',
+rb2.t_2zdfh as '2机日最大负荷',
+rb2.t_zdfh as '厂日最大负荷',
+rb2.t_1zxfh as '1机日最小负荷',
+rb2.t_2zxfh as '2机日最小负荷',
+rb2.t_zxfh as '厂日最小负荷',
+wcw.t_jcyml as '日来煤',
+rb2.t_1mjml as '1机日煤机',
+rb2.t_2mjml as '2机日煤机',
+rb2.t_1pdml as '1机日皮带',
+rb2.t_2pdml as '2机日皮带',
+wcw.t_mccml as '日存煤',
+wcw.t_jcryl as '日来油',
+wcw.t_1ryl as '1机日用油',
+wcw.t_2ryl as '2机日用油',
+wcw.t_cyl as '日存油',
+wcw.t_1tlxl as '1机日脱硫效率',
+wcw.t_2tlxl as '2机日脱硫效率',
+wcw.t_tlxl as '全厂日脱硫效率',
+rb1.t_1bsl as '1机日补水量',
+rb1.t_2bsl as '2机日补水量',
+rb1.t_1zfl as '1机日蒸发量',
+rb1.t_2zfl as '2机日蒸发量',
+mh.t_1hrbsl as '1机日补水率',
+mh.t_2hrbsl as '2机日补水率',
+rb1.t_1yxxss as '1机日运行小时',
+rb1.t_2yxxss as '2机日运行小时',
+rb1.t_1pjzk as '1机平均真空',
+rb1.t_2pjzk as '2机平均真空',
+rb1.t_qctlysl as '日脱硫用水量'
+from t_info_wcwrtb as wcw
+left join t_info_scrbb2 as rb2
+on wcw.t_time = rb2.t_time
+left join t_info_scrbb1 as rb1
+on wcw.t_time = rb1.t_time
+left join t_info_wcwmh as mh
+on wcw.t_time = mh.t_time
+where wcw.t_time = '${time}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="ds_y" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="time"/>
+<O>
+<![CDATA[2020-01-10]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select wcw.t_time,
+sum(wcw.t_1fdl) as '1机月发电量',
+sum(wcw.t_2fdl) as '2机月发电量',
+sum(wcw.t_1swdl) as '1机月上网电量',
+sum(wcw.t_2swdl) as '2机月上网电量', 
+sum(wcw.t_1fdcydl) as '1机月厂用',
+sum(wcw.t_2fdcydl) as '2机月厂用',
+sum(wcw.t_1zhcydl) as '1机月综合厂用',
+sum(wcw.t_2zhcydl) as '2机月综合厂用',
+sum(wcw.t_1fdbmh) as '1机月发电煤耗',
+sum(wcw.t_2fdbmh) as '2机月发电煤耗',
+sum(wcw.t_fdbmh) as '厂月发电煤耗',
+sum(wcw.t_1gdbmh) as '1机月供电煤耗',
+sum(wcw.t_2gdbmh) as '2机月供电煤耗',
+sum(wcw.t_gdbmh) as '厂月供电煤耗',
+avg(wcw.t_1avgfhl) as '1机月负荷率',
+avg(wcw.t_2avgfhl) as '2机月负荷率',
+sum(rb2.t_1zdfh) as '1机月最大负荷',
+sum(rb2.t_2zdfh) as '2机月最大负荷',
+sum(rb2.t_zdfh) as '厂月最大负荷',
+sum(rb2.t_1zxfh) as '1机月最小负荷',
+sum(rb2.t_2zxfh) as '2机月最小负荷',
+sum(rb2.t_zxfh) as '厂月最小负荷',
+sum(wcw.t_jcyml) as '月来煤',
+sum(rb2.t_1mjml) as '1机月煤机',
+sum(rb2.t_2mjml) as '2机月煤机',
+sum(rb2.t_1pdml) as '1机月皮带',
+sum(rb2.t_2pdml) as '2机月皮带',
+sum(wcw.t_mccml) as '月存煤',
+sum(wcw.t_jcryl) as '月来油',
+sum(wcw.t_1ryl) as '1机月用油',
+sum(wcw.t_2ryl) as '2机月用油',
+sum(wcw.t_cyl) as '月存油',
+avg(wcw.t_1tlxl) as '1机月脱硫效率',
+avg(wcw.t_2tlxl) as '2机月脱硫效率',
+avg(wcw.t_tlxl) as '全厂月脱硫效率',
+sum(rb1.t_1bsl) as '1机月补水量',
+sum(rb1.t_2bsl) as '2机月补水量',
+sum(rb1.t_1zfl) as '1机月蒸发量',
+sum(rb1.t_2zfl) as '2机月蒸发量',
+avg(mh.t_1hrbsl) as '1机月补水率',
+avg(mh.t_2hrbsl) as '2机月补水率',
+sum(rb1.t_1yxxss) as '1机月运行小时',
+sum(rb1.t_2yxxss) as '2机月运行小时'
+from t_info_wcwrtb as wcw
+left join t_info_scrbb2 as rb2
+on wcw.t_time = rb2.t_time
+left join t_info_scrbb1 as rb1
+on wcw.t_time = rb1.t_time
+left join t_info_wcwmh as mh
+on wcw.t_time = mh.t_time
+where wcw.t_time <= '${time}'
+and year(wcw.t_time) = year('${time}')
+and month(wcw.t_time) = month('${time}')]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="ds_n" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="time"/>
+<O>
+<![CDATA[2020-04-21]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select wcw.t_time,
+sum(wcw.t_1fdl) as '1机年发电量',
+sum(wcw.t_2fdl) as '2机年发电量',
+sum(wcw.t_1swdl) as '1机年上网电量',
+sum(wcw.t_2swdl) as '2机年上网电量', 
+sum(wcw.t_1fdcydl) as '1机年厂用',
+sum(wcw.t_2fdcydl) as '2机年厂用',
+sum(wcw.t_1zhcydl) as '1机年综合厂用',
+sum(wcw.t_2zhcydl) as '2机年综合厂用',
+sum(wcw.t_1fdbmh) as '1机年发电煤耗',
+sum(wcw.t_2fdbmh) as '2机年发电煤耗',
+sum(wcw.t_fdbmh) as '厂年发电煤耗',
+sum(wcw.t_1gdbmh) as '1机年供电煤耗',
+sum(wcw.t_2gdbmh) as '2机年供电煤耗',
+sum(wcw.t_gdbmh) as '厂年供电煤耗',
+avg(wcw.t_1avgfhl) as '1机年负荷率',
+avg(wcw.t_2avgfhl) as '2机年负荷率',
+sum(rb2.t_1zdfh) as '1机年最大负荷',
+sum(rb2.t_2zdfh) as '2机年最大负荷',
+sum(rb2.t_zdfh) as '厂年最大负荷',
+sum(rb2.t_1zxfh) as '1机年最小负荷',
+sum(rb2.t_2zxfh) as '2机年最小负荷',
+sum(rb2.t_zxfh) as '厂年最小负荷',
+sum(wcw.t_jcyml) as '年来煤',
+sum(rb2.t_1mjml) as '1机年煤机',
+sum(rb2.t_2mjml) as '2机年煤机',
+sum(rb2.t_1pdml) as '1机年皮带',
+sum(rb2.t_2pdml) as '2机年皮带',
+sum(wcw.t_mccml) as '年存煤',
+sum(wcw.t_jcryl) as '年来油',
+sum(wcw.t_1ryl) as '1机年用油',
+sum(wcw.t_2ryl) as '2机年用油',
+sum(wcw.t_cyl) as '年存油',
+avg(wcw.t_1tlxl) as '1机年脱硫效率',
+avg(wcw.t_2tlxl) as '2机年脱硫效率',
+avg(wcw.t_tlxl) as '全厂年脱硫效率',
+sum(rb1.t_1bsl) as '1机年补水量',
+sum(rb1.t_2bsl) as '2机年补水量',
+sum(rb1.t_1zfl) as '1机年蒸发量',
+sum(rb1.t_2zfl) as '2机年蒸发量',
+avg(mh.t_1hrbsl) as '1机年补水率',
+avg(mh.t_2hrbsl) as '2机年补水率',
+sum(rb1.t_1yxxss) as '1机年运行小时',
+sum(rb1.t_2yxxss) as '2机年运行小时'
+from t_info_wcwrtb as wcw
+left join t_info_scrbb2 as rb2
+on wcw.t_time = rb2.t_time
+left join t_info_scrbb1 as rb1
+on wcw.t_time = rb1.t_time
+left join t_info_wcwmh as mh
+on wcw.t_time = mh.t_time
+where wcw.t_time <= '${time}'
+and year(wcw.t_time) = year('${time}')]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="ds_rxldl" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="time"/>
+<O>
+<![CDATA[2020-01-08]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+(t_cy1x24zy - t_cy1x00zy) * 1530 as '一线输出',
+(t_cy1x24fy - t_cy1x00fy) * 1530 as '一线输入',
+(t_cy2x24zy - t_cy2x00zy) * 1530 as '二线输出',
+(t_cy2x24fy - t_cy2x00fy) * 1530 as '二线输入'
+from t_info_guankou
+where t_time = '${time}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="fd_yxldl" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="time"/>
+<O>
+<![CDATA[2020-01-08]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+sum(t_cy1x24zy - t_cy1x00zy) * 1530 as '一线月输出',
+sum(t_cy1x24fy - t_cy1x00fy) * 1530 as '一线月输入',
+sum(t_cy2x24zy - t_cy2x00zy) * 1530 as '二线月输出',
+sum(t_cy2x24fy - t_cy2x00fy) * 1530 as '二线月输入'
+from t_info_guankou
+where t_time <= '${time}'
+and month(t_time) = month('${time}')
+and year(t_time) = year('${time}')]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="ds_nxldl" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="time"/>
+<O>
+<![CDATA[2020-01-08]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+sum(t_cy1x24zy - t_cy1x00zy) * 1530 as '一线年输出',
+sum(t_cy1x24fy - t_cy1x00fy) * 1530 as '一线年输入',
+sum(t_cy2x24zy - t_cy2x00zy) * 1530 as '二线年输出',
+sum(t_cy2x24fy - t_cy2x00fy) * 1530 as '二线年输入'
+from t_info_guankou
+where t_time <= '${time}'
+and year(t_time) = year('${time}')]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="ds_fj" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="time"/>
+<O>
+<![CDATA[2020-04-22]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select
+a.t_jz as '机组',
+((c.t_tl1a_ed - b.t_tl1a_st) + (c.t_tl1b_ed - b.t_tl1b_st)) as '脱硫电量',
+((c.t_njsba_ed - b.t_njsba_st) + (c.t_njsbb_ed - b.t_njsbb_st)) as '凝泵用电量',
+((c.t_gssba_ed - b.t_gssba_st) + (c.t_gssbb_ed - b.t_gssbb_st) + (c.t_lsbc_ed - b.t_lsbc_st) + (c.t_dssba_ed - b.t_dssba_st) + (c.t_dssbb_ed - b.t_dssbb_st)) as '循环泵耗电量',
+(c.t_sm1a_ed - b.t_sm1a_st) as '起备变用电'
+from t_info_fjrtb as a
+left join (
+select 
+t_time,
+t_jz,
+t_tl1a as 't_tl1a_st', 
+t_tl1b as 't_tl1b_st', 
+t_njsba as 't_njsba_st',
+t_njsbb as 't_njsbb_st',
+t_gssba as 't_gssba_st',
+t_gssbb as 't_gssbb_st',
+t_lsbc as 't_lsbc_st',
+t_dssba as 't_dssba_st',
+t_dssbb as 't_dssbb_st',
+t_sm1a as 't_sm1a_st'
+from t_info_fjrtb
+where TO_DAYS('${time}') - TO_DAYS(t_time) = 1
+and t_hour = '10:00'
+) as b
+on TO_DAYS(a.t_time) - TO_DAYS(b.t_time) = 1 and a.t_jz = b.t_jz
+left join (
+select 
+t_time,
+t_jz,
+t_tl1a as 't_tl1a_ed', 
+t_tl1b as 't_tl1b_ed', 
+t_njsba as 't_njsba_ed',
+t_njsbb as 't_njsbb_ed',
+t_gssba as 't_gssba_ed',
+t_gssbb as 't_gssbb_ed',
+t_lsbc as 't_lsbc_ed',
+t_dssba as 't_dssba_ed',
+t_dssbb as 't_dssbb_ed',
+t_sm1a as 't_sm1a_ed'
+from t_info_fjrtb
+where t_time = '${time}'
+and t_hour = '10:00'
+) as c
+on a.t_time = c.t_time and a.t_jz = c.t_jz
+where a.t_time = '${time}' 
+group by a.t_jz]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="sh_data" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC2]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT id_key, report_state, auditor FROM t_info_reportstate WHERE report_id = 'wcw_zhbb' and report_date = '${time}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.button.write.Verify">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Fine-Engine_Report_Verify_Data')}]]></Text>
+<IconName>
+<![CDATA[verify]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.NewPrint">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Fine-Engine_Print')}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.Export">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Export')}]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true" image="true" html="true"/>
+</Widget>
+<Widget class="com.fr.report.web.button.Email">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Fine-Engine_Report_Email')}]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+<EmailButton customConsignee="true" consigneeByDepartment="false" consigneeByRole="false"/>
+</Widget>
+<Widget class="com.fr.report.web.button.write.AppendColumnRow">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Fine-Engine_Add_Record')}]]></Text>
+<IconName>
+<![CDATA[appendrow]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.write.ShowCellValue">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+<LabelAttr verticalcenter="true" textalign="0" autoline="false"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<EditRowColor setColor="false"/>
+<WebWrite SheetPosition="3"/>
+<RptLocation isShowAtLeft="false"/>
+<UnloadCheck/>
+<ShowWidgets/>
+<OtherAttr autoStash="false"/>
+</WebWriteContent>
+</ReportWebAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[1152000,1440000,1440000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,0,0,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,0,0,0,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2986560,1645920,3600000,4053600,2592000,3600000,3600000,3600000,0,0,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="3" s="0">
+<O>
+<![CDATA[国电投五彩湾北二电厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="0" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="0" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="0" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="0" cs="2" s="2">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=year(today()) + "年" + month(today()) + "月" + day(today()) + "日"]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" cs="8" s="3">
+<O>
+<![CDATA[国电投五彩湾北二电厂生产日报表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" s="4">
+<O>
+<![CDATA[制表日期：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" cs="3" s="5">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$time]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="2" s="6">
+<O>
+<![CDATA[审核状态]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="2" s="7">
+<O t="DSColumn">
+<Attributes dsName="sh_data" columnName="report_state"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Present class="com.fr.base.present.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="-1" value="回退"/>
+<Dict key="0" value="未审核"/>
+<Dict key="1" value="已提交"/>
+<Dict key="2" value="已审核"/>
+</CustomDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="6" r="2" s="6">
+<O>
+<![CDATA[审核人员]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="2" s="8">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=J82]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" s="9">
+<O>
+<![CDATA[序号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="3" cs="2" s="9">
+<O>
+<![CDATA[指标名称]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="3" s="9">
+<O>
+<![CDATA[机别]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="3" s="9">
+<O>
+<![CDATA[单位]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="3" s="9">
+<O>
+<![CDATA[当日值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" s="9">
+<O>
+<![CDATA[月累计值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" s="9">
+<O>
+<![CDATA[年累计值 ]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" rs="3" s="10">
+<O t="I">
+<![CDATA[1]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="4" cs="2" rs="3" s="10">
+<O>
+<![CDATA[发电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="4" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="4" rs="12" s="10">
+<O>
+<![CDATA[万千瓦时]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="4" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日发电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="4" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月发电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="4" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年发电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="5" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日发电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="5" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月发电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="5" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年发电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="6" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="6" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F5 + F6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="6" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G5 + G6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="6" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H5 + H6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="7" rs="3" s="10">
+<O t="I">
+<![CDATA[2]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="7" cs="2" rs="3" s="10">
+<O>
+<![CDATA[上网电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="7" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="7" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日上网电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月上网电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年上网电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="8" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="8" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日上网电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="8" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月上网电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="8" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年上网电量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="9" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="9" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F8 + F9]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="9" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G8 + G9]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="9" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H8 + H9]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="10" rs="3" s="10">
+<O t="I">
+<![CDATA[3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="10" cs="2" rs="3" s="10">
+<O>
+<![CDATA[厂用电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="10" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="10" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="10" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="10" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="11" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="11" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="11" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="12" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="12" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F11 + F12]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="12" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G11 + G12]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="12" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H11 + H12]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="13" rs="3" s="10">
+<O t="I">
+<![CDATA[4]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="13" cs="2" rs="3" s="10">
+<O>
+<![CDATA[综合厂用电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="13" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="13" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日综合厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月综合厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="13" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年综合厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="14" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="14" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日综合厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="14" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月综合厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="14" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年综合厂用"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="15" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="15" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F14 + F15]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="15" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G14 + G15]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="15" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H14 + H15]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="16" rs="3" s="10">
+<O t="I">
+<![CDATA[5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="16" cs="2" rs="3" s="10">
+<O>
+<![CDATA[厂用电率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="16" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="16" rs="6" s="10">
+<O>
+<![CDATA[%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="16" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F11 / F5 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="16" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G11 / G5 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="16" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G11 / G5 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="17" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="17" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F12 / F6 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="17" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G12 / G6 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="17" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H12 / H6 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="18" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="18" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F13 / F7 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="18" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G13 / G7 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="18" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H13 / H7 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="19" rs="3" s="10">
+<O t="I">
+<![CDATA[6]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="19" cs="2" rs="3" s="10">
+<O>
+<![CDATA[综合厂用电率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="19" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="19" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F14 / F5 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="19" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G14 / G5 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="19" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H14 / H5 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="20" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="20" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F15 / F6 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="20" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G15 / G6 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="20" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H15 / H6 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="21" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="21" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F16 / F7 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="21" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G16 / G7 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="21" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H16 / H7 * 100]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="22" rs="3" s="10">
+<O t="I">
+<![CDATA[7]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="22" cs="2" rs="3" s="10">
+<O>
+<![CDATA[发电煤耗]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="22" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="22" rs="6" s="10">
+<O>
+<![CDATA[克/千瓦时]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="22" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日发电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="22" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月发电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="22" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年发电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="23" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="23" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日发电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="23" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月发电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="23" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年发电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="24" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="24" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="厂日发电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="24" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="厂月发电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="24" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="厂年发电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="25" rs="3" s="10">
+<O t="I">
+<![CDATA[8]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="25" cs="2" rs="3" s="10">
+<O>
+<![CDATA[供电煤耗]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="25" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="25" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日供电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="25" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月供电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="25" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年供电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="26" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="26" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日供电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="26" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月供电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="26" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年供电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="27" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="27" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="厂日供电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="27" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="厂月供电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="27" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="厂年供电煤耗"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="28" rs="3" s="10">
+<O t="I">
+<![CDATA[9]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="28" cs="2" rs="3" s="10">
+<O>
+<![CDATA[负荷率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="28" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="28" rs="3" s="10">
+<O>
+<![CDATA[%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="28" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日负荷率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="28" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月负荷率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="28" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年负荷率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="29" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="29" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日负荷率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="29" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月负荷率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="29" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年负荷率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="30" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="30" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=AVERAGE(F29, F30)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="30" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=AVERAGE(G29, G30)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="30" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=AVERAGE(H29, H30)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="31" rs="3" s="10">
+<O t="I">
+<![CDATA[10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="31" cs="2" rs="3" s="10">
+<O>
+<![CDATA[最大负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="31" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="31" rs="6" s="10">
+<O>
+<![CDATA[MW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="31" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="31" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="31" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="32" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="32" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="32" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="32" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="33" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="33" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="厂日最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="33" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="厂月最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="33" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="厂年最大负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="34" rs="3" s="10">
+<O t="I">
+<![CDATA[11]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="34" cs="2" rs="3" s="10">
+<O>
+<![CDATA[最小负荷]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="34" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="34" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="34" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="34" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="35" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="35" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="35" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="35" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="36" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="36" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="厂日最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="36" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="厂月最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="36" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="厂年最小负荷"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="37" rs="2" s="10">
+<O t="I">
+<![CDATA[14]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="37" cs="2" s="10">
+<O>
+<![CDATA[昌雅Ⅰ线输出电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="37" s="10">
+<O>
+<![CDATA[万千瓦时]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="37" rs="4" s="10">
+<O>
+<![CDATA[万千瓦时]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="37" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_rxldl" columnName="一线输出"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="37" s="12">
+<O t="DSColumn">
+<Attributes dsName="fd_yxldl" columnName="一线月输出"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="37" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_nxldl" columnName="一线年输出"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="1" r="38" cs="2" s="10">
+<O>
+<![CDATA[昌雅Ⅰ线输入电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="38" s="10">
+<O>
+<![CDATA[万千瓦时]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="38" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_rxldl" columnName="一线输入"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="38" s="12">
+<O t="DSColumn">
+<Attributes dsName="fd_yxldl" columnName="一线月输入"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="38" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_nxldl" columnName="一线年输入"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="39" rs="2" s="10">
+<O t="I">
+<![CDATA[15]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="39" cs="2" s="10">
+<O>
+<![CDATA[昌雅II线输出电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="39" s="10">
+<O>
+<![CDATA[万千瓦时]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="39" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_rxldl" columnName="二线输出"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="39" s="12">
+<O t="DSColumn">
+<Attributes dsName="fd_yxldl" columnName="二线月输出"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="39" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_nxldl" columnName="二线年输出"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="1" r="40" cs="2" s="10">
+<O>
+<![CDATA[昌雅II线输入电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="40" s="10">
+<O>
+<![CDATA[万千瓦时]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="40" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_rxldl" columnName="二线输入"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="40" s="12">
+<O t="DSColumn">
+<Attributes dsName="fd_yxldl" columnName="二线月输入"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="40" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_nxldl" columnName="二线年输入"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="41" s="10">
+<O t="I">
+<![CDATA[16]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="41" cs="2" s="10">
+<O>
+<![CDATA[来煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="41" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="41" rs="13" s="10">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="41" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="日来煤"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="41" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="月来煤"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="41" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="年来煤"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="42" rs="3" s="10">
+<O t="I">
+<![CDATA[17]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="42" cs="2" rs="3" s="10">
+<O>
+<![CDATA[给煤机耗煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="42" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="42" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日煤机"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="42" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月煤机"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="42" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年煤机"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="43" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="43" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日煤机"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="43" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月煤机"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="43" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年煤机"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="44" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="44" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F43 + F44]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="44" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G43 + G44]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="44" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H43 + H44]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="45" rs="3" s="10">
+<O t="I">
+<![CDATA[18]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="45" cs="2" rs="3" s="10">
+<O>
+<![CDATA[皮带称上煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="45" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="45" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日皮带"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="45" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月皮带"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="45" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年皮带"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="46" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="46" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日皮带"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="46" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月皮带"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="46" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年皮带"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="47" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="47" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F46 + F47]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="47" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G46 + G47]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="47" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H46 + H47]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="48" s="10">
+<O t="I">
+<![CDATA[19]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="48" cs="2" s="10">
+<O>
+<![CDATA[煤场存煤量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="48" s="10">
+<O>
+<![CDATA[全场]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="48" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="日存煤"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="48" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="月存煤"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="48" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="年存煤"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="49" s="10">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="49" cs="2" s="10">
+<O>
+<![CDATA[来油量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="49" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="49" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="日来油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="49" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="月来油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="49" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="年来油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="50" rs="3" s="10">
+<O t="I">
+<![CDATA[21]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="50" cs="2" rs="3" s="10">
+<O>
+<![CDATA[用油量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="50" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="50" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日用油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="50" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月用油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="50" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年用油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="51" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="51" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日用油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="51" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月用油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="51" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年用油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="52" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="52" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F51 + F52]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="52" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G51 + G52]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="52" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H51 + H52]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="53" s="10">
+<O t="I">
+<![CDATA[22]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="53" cs="2" s="10">
+<O>
+<![CDATA[油罐存油量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="53" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="53" s="14">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="日存油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="53" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="月存油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="53" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="年存油"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="54" rs="3" s="10">
+<O t="I">
+<![CDATA[23]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="54" cs="2" rs="3" s="10">
+<O>
+<![CDATA[脱硫投入率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="54" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="54" rs="6" s="10">
+<O>
+<![CDATA[%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="54" s="13">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_1rtltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "') ", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="54" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月脱硫"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="54" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年脱硫"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="55" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="55" s="14">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_2rtltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "') ", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="55" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月脱硫"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="55" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年脱硫"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="56" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="56" s="13">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_qcrtltrl FROM t_info_scrbb2 WHERE t_time = TIMESTAMP('" + $time + "') ", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="56" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="全厂月脱硫"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="56" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="全厂年脱硫"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="57" rs="3" s="10">
+<O t="I">
+<![CDATA[23]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="57" cs="2" rs="3" s="10">
+<O>
+<![CDATA[脱硫效率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="57" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="57" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="57" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="57" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="58" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="58" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="58" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="58" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="59" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="59" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="全厂日脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="59" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="全厂月脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="59" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="全厂年脱硫效率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="60" rs="3" s="10">
+<O t="I">
+<![CDATA[24]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="60" cs="2" rs="3" s="10">
+<O>
+<![CDATA[补水量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="60" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="60" rs="3" s="10">
+<O>
+<![CDATA[吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="60" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日补水量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="60" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月补水量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="60" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年补水量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="61" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="61" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日补水量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="61" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月补水量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="61" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年补水量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="62" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="62" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F61 + F62]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="62" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G61 + G62]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="62" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H61 + H62]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="63" rs="3" s="10">
+<O t="I">
+<![CDATA[25]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="63" cs="2" rs="3" s="10">
+<O>
+<![CDATA[蒸发量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="63" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="63" rs="3" s="10">
+<O>
+<![CDATA[万吨]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="63" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日蒸发量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="63" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月蒸发量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="63" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年蒸发量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="64" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="64" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日蒸发量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="64" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月蒸发量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="64" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年蒸发量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="65" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="65" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F64 + F65]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="65" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G64 + G65]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="65" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H64 + H65]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="66" rs="3" s="10">
+<O t="I">
+<![CDATA[26]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="66" cs="2" rs="3" s="10">
+<O>
+<![CDATA[补水率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="66" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="66" rs="3" s="10">
+<O>
+<![CDATA[%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="66" s="14">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日补水率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="66" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月补水率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="66" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年补水率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="67" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="67" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日补水率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="67" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月补水率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="67" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年补水率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="68" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="68" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=AVERAGE(F67, F68)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="68" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=AVERAGE(G67, G68)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="68" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=AVERAGE(H67, H68)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="69" rs="3" s="10">
+<O t="I">
+<![CDATA[27]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="69" cs="2" rs="3" s="10">
+<O>
+<![CDATA[机组运行小时数]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="69" s="10">
+<O>
+<![CDATA[1号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="69" rs="3" s="10">
+<O>
+<![CDATA[h]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="69" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机日运行小时"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="69" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="1机月运行小时"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="69" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="1机年运行小时"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="70" s="10">
+<O>
+<![CDATA[2号机组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="70" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机日运行小时"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="70" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_y" columnName="2机月运行小时"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="7" r="70" s="12">
+<O t="DSColumn">
+<Attributes dsName="ds_n" columnName="2机年运行小时"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="71" s="10">
+<O>
+<![CDATA[全厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="71" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=F70 + F71]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="71" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=G70 + G71]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="71" s="12">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=H70 + H71]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="72" cs="3" s="10">
+<O>
+<![CDATA[#1机组平均真空（kPa）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="72" s="14">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="1机平均真空"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="72" cs="3" s="10">
+<O>
+<![CDATA[#2机组平均真空（kPa）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="72" s="14">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="2机平均真空"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="73" cs="3" s="10">
+<O>
+<![CDATA[#1机组脱硫用电量（万kWh）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="73" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_fj" columnName="脱硫电量"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[机组]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1号机组]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="73" cs="3" s="10">
+<O>
+<![CDATA[1号机凝泵用电量（万kWh）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="73" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_fj" columnName="凝泵用电量"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[机组]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1号机组]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="74" cs="3" s="10">
+<O>
+<![CDATA[#2机组脱硫用电量（万kWh）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="74" s="14">
+<O t="DSColumn">
+<Attributes dsName="ds_fj" columnName="脱硫电量"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[机组]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2号机组]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="74" cs="3" s="10">
+<O>
+<![CDATA[2号机凝泵用电量（万kWh）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="74" s="14">
+<O t="DSColumn">
+<Attributes dsName="ds_fj" columnName="凝泵用电量"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[机组]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2号机组]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="75" cs="3" s="10">
+<O>
+<![CDATA[1号机循环泵耗电量（万kWh）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="75" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_fj" columnName="循环泵耗电量"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[机组]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1号机组]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="75" cs="3" s="10">
+<O>
+<![CDATA[2号机循环泵耗电量（万kWh）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="75" s="13">
+<O t="DSColumn">
+<Attributes dsName="ds_fj" columnName="循环泵耗电量"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[机组]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2号机组]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="0" r="76" cs="3" s="10">
+<O>
+<![CDATA[启备变用电量（万千瓦时）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="76" s="14">
+<O t="DSColumn">
+<Attributes dsName="ds_fj" columnName="起备变用电"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[机组]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1号机组]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="4" r="76" cs="3" s="10">
+<O>
+<![CDATA[全厂脱硫用水量（吨）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="76" s="14">
+<O t="DSColumn">
+<Attributes dsName="ds_r" columnName="日脱硫用水量"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="77" cs="8" s="15">
+<O>
+<![CDATA[1/1]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="79" s="1">
+<PrivilegeControl/>
+<HighlightList>
+<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="1">
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="1">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[F82 = "0004"]]></Formula>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[C82 <= 0]]></Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+</JoinCondition>
+<JoinCondition join="1">
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="1">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[F82 = "0003"]]></Formula>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[C82 = 0]]></Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+</JoinCondition>
+</Condition>
+<HighlightAction class="com.fr.report.cell.cellattr.highlight.RowHeightHighlightAction">
+<RowHeight i="1152000"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="1" r="79" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="79" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="79" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="79" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="79" s="16">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.FreeButton">
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[重置]]></Text>
+<initial>
+<Background name="ColorBackground" color="-8947849"/>
+</initial>
+<isCustomType isCustomType="true"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="79" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="79" s="16">
+<O>
+<![CDATA[提交]]></O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.FreeButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[_g('${sessionID}').writeReport(); 
+this.setEnable(false);
+
+]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[提交]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+<initial>
+<Background name="ColorBackground" color="-16745788"/>
+</initial>
+<isCustomType isCustomType="true"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="79">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="80" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="80" s="17">
+<O>
+<![CDATA[填报对应报表ID：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="80" s="17">
+<O>
+<![CDATA[当前状态：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="80" s="17">
+<O>
+<![CDATA[下一个状态：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="80" s="17">
+<O>
+<![CDATA[当前人员ID：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="80" s="17">
+<O>
+<![CDATA[当前人员角色]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="80" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="80" s="17">
+<O>
+<![CDATA[审核人员ID：]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="80" s="17">
+<O>
+<![CDATA[审核人员角色]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="80" s="17">
+<O>
+<![CDATA[审核人员名字]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="81" s="17">
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="1" r="81" s="17">
+<O t="DSColumn">
+<Attributes dsName="sh_data" columnName="id_key"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="81" s="17">
+<O t="DSColumn">
+<Attributes dsName="sh_data" columnName="report_state"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="81" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=C82 + 1]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="81" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$userid]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="81" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_grpid FROM t_sys_roleuser WHERE t_userid = '" + E82 + "'", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="81" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="81" s="17">
+<O t="DSColumn">
+<Attributes dsName="sh_data" columnName="auditor"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="81" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_grpid FROM t_sys_roleuser WHERE t_userid = '" + H82 + "'", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="81" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=SQL("JDBC2", "SELECT t_username FROM t_sys_user WHERE t_userid = '" + H82 + "'", 1, 1)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="82" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="83" s="17">
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+<Background name="ColorBackground" color="-1"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<ReportWriteAttr>
+<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
+<Name>
+<![CDATA[内置SQL1]]></Name>
+<Attributes dsName="JDBC2"/>
+<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
+<Table schema="" name="t_info_reportstate"/>
+<ColumnConfig name="id_key" isKey="true" skipUnmodified="false">
+<ColumnRow column="1" row="81"/>
+</ColumnConfig>
+<ColumnConfig name="report_state" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="81"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[C82 == -1]]></Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+</DMLConfig>
+</SubmitVisitor>
+</ReportWriteAttr>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0" useParamsTemplate="true"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Parameters/>
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="0" left="0" bottom="0" right="0"/>
+<Border>
+<border style="0" color="-723724" borderRadius="0" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新建标题]]></O>
+<FRFont name="SimSun" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-526086"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.Label">
+<WidgetName name="Labeltime_c_c_c_c_c_c_c_c_c"/>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue>
+<O>
+<![CDATA[日期:]]></O>
+</widgetValue>
+<LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</InnerWidget>
+<BoundsAttr x="20" y="20" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.DateEditor">
+<WidgetName name="time"/>
+<LabelName name="日期:"/>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<DateAttr enddatefm="=today()"/>
+<widgetValue>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=today()]]></Attributes>
+</O>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="100" y="20" width="94" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.parameter.FormSubmitButton">
+<WidgetName name="Search_c_c_c_c_c_c_c_c_c"/>
+<WidgetAttr description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[查询]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</InnerWidget>
+<BoundsAttr x="216" y="20" width="80" height="21"/>
+</Widget>
+<ShowBookmarks showBookmarks="true"/>
+<Sorted sorted="false"/>
+<MobileWidgetList>
+<Widget widgetName="time"/>
+<Widget widgetName="Search_c_c_c_c_c_c_c_c_c"/>
+</MobileWidgetList>
+<FrozenWidgets/>
+<MobileBookMarkStyle class="com.fr.form.ui.mobile.impl.DefaultMobileBookMarkStyle"/>
+<Display display="true"/>
+<DelayDisplayContent delay="false"/>
+<UseParamsTemplate use="true"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
+<NameTagModified/>
+<WidgetNameTagMap/>
+<ParamAttr class="com.fr.report.mobile.DefaultMobileParamStyle"/>
+</Layout>
+<DesignAttr width="960" height="60"/>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="宋体" style="1" size="88"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="宋体" style="1" size="88"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="1" size="112"/>
+<Background name="ColorBackground" color="-7099945"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-4144960"/>
+<Bottom style="2" color="-4144960"/>
+<Left style="2" color="-4144960"/>
+<Right style="2" color="-4144960"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-4144960"/>
+<Bottom style="2" color="-4144960"/>
+<Left style="2" color="-4144960"/>
+<Right style="2" color="-4144960"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-4144960"/>
+<Bottom style="2" color="-4144960"/>
+<Left style="2" color="-4144960"/>
+<Right style="2" color="-4144960"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="0" size="88" foreground="-16770364"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="0" size="88" foreground="-16770364"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-4144960"/>
+<Bottom style="2" color="-4144960"/>
+<Left style="2" color="-4144960"/>
+<Right style="2" color="-4144960"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="1" size="88"/>
+<Background name="ColorBackground" color="-2432528"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="ColorBackground" color="-2432528"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="ColorBackground" color="-855310"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="ColorBackground" color="-1773860"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="宋体" style="0" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-5066062"/>
+<Bottom style="2" color="-5066062"/>
+<Left style="2" color="-5066062"/>
+<Right style="2" color="-5066062"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="1" size="80"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="0" size="88" foreground="-1"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="KAA"/>
+<PreviewType PreviewType="1"/>
+<TemplateIdAttMark class="com.fr.base.iofile.attr.TemplateIdAttrMark">
+<TemplateIdAttMark TemplateId="577c4f97-d990-4997-b8ba-24ba20756eff"/>
+</TemplateIdAttMark>
+</WorkBook>
