@@ -19764,7 +19764,7 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="5" r="79" s="4">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=year($time) + '-' + month($time) + '-29']]></Attributes>
+<![CDATA[=if(DATEINYEAR(year($time) + '-' + month($time) + '-29') == DATEINYEAR(today()), null, year($time) + '-' + month($time) + '-29')]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -19772,7 +19772,7 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="6" r="79" s="4">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=year($time) + '-' + month($time) + '-30']]></Attributes>
+<![CDATA[=if(DATEINYEAR(year($time) + '-' + month($time) + '-30') == DATEINYEAR(today()), null, year($time) + '-' + month($time) + '-30')]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -19780,7 +19780,7 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="7" r="79" s="4">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=year($time) + '-' + month($time) + '-31']]></Attributes>
+<![CDATA[=if(DATEINYEAR(year($time) + '-' + month($time) + '-31') == DATEINYEAR(today()), null, year($time) + '-' + month($time) + '-31')]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
