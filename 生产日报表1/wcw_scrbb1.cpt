@@ -2507,8 +2507,11 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <C c="7" r="13" s="9">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="xxs1"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -2738,8 +2741,11 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <C c="7" r="14" s="10">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="xxs2"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>

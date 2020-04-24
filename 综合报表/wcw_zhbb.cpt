@@ -13738,8 +13738,11 @@ group by a.t_jz]]></Query>
 <C c="5" r="69" s="12">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="xss1"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -13802,8 +13805,11 @@ group by a.t_jz]]></Query>
 <C c="6" r="69" s="12">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="xss11"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -13866,8 +13872,11 @@ group by a.t_jz]]></Query>
 <C c="7" r="69" s="12">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="xss111"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -13936,8 +13945,11 @@ group by a.t_jz]]></Query>
 <C c="5" r="70" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="xss2"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -14000,8 +14012,11 @@ group by a.t_jz]]></Query>
 <C c="6" r="70" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="xss22"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -14064,8 +14079,11 @@ group by a.t_jz]]></Query>
 <C c="7" r="70" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="xss222"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
