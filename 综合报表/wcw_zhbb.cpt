@@ -13748,8 +13748,11 @@ group by a.t_jz]]></Query>
 <C c="5" r="69" s="12">
 <O t="DSColumn">
 <Attributes dsName="ds_r" columnName="1机日运行小时"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -13812,8 +13815,11 @@ group by a.t_jz]]></Query>
 <C c="6" r="69" s="12">
 <O t="DSColumn">
 <Attributes dsName="ds_y" columnName="1机月运行小时"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -13876,8 +13882,11 @@ group by a.t_jz]]></Query>
 <C c="7" r="69" s="12">
 <O t="DSColumn">
 <Attributes dsName="ds_n" columnName="1机年运行小时"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -13946,8 +13955,11 @@ group by a.t_jz]]></Query>
 <C c="5" r="70" s="11">
 <O t="DSColumn">
 <Attributes dsName="ds_r" columnName="2机日运行小时"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -14010,8 +14022,11 @@ group by a.t_jz]]></Query>
 <C c="6" r="70" s="11">
 <O t="DSColumn">
 <Attributes dsName="ds_y" columnName="2机月运行小时"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -14074,8 +14089,11 @@ group by a.t_jz]]></Query>
 <C c="7" r="70" s="11">
 <O t="DSColumn">
 <Attributes dsName="ds_n" columnName="2机年运行小时"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/3600]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
