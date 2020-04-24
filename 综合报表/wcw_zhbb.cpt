@@ -595,8 +595,11 @@ group by a.t_jz]]></Query>
 <C c="5" r="4" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl1"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -659,8 +662,11 @@ group by a.t_jz]]></Query>
 <C c="6" r="4" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl11"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -723,8 +729,11 @@ group by a.t_jz]]></Query>
 <C c="7" r="4" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl111"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -793,8 +802,11 @@ group by a.t_jz]]></Query>
 <C c="5" r="5" s="12">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl2"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -857,8 +869,11 @@ group by a.t_jz]]></Query>
 <C c="6" r="5" s="12">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl22"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -921,8 +936,11 @@ group by a.t_jz]]></Query>
 <C c="7" r="5" s="12">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl222"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -991,8 +1009,11 @@ group by a.t_jz]]></Query>
 <C c="5" r="6" s="13">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl3"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -1055,8 +1076,11 @@ group by a.t_jz]]></Query>
 <C c="6" r="6" s="13">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl33"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -1119,8 +1143,11 @@ group by a.t_jz]]></Query>
 <C c="7" r="6" s="13">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl333"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -12481,8 +12508,11 @@ group by a.t_jz]]></Query>
 <C c="5" r="63" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="zfl1"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -12545,8 +12575,11 @@ group by a.t_jz]]></Query>
 <C c="6" r="63" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="zfl11"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -12609,8 +12642,11 @@ group by a.t_jz]]></Query>
 <C c="7" r="63" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="zfl111"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -12679,8 +12715,11 @@ group by a.t_jz]]></Query>
 <C c="5" r="64" s="12">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="zfl2"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -12743,8 +12782,11 @@ group by a.t_jz]]></Query>
 <C c="6" r="64" s="12">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="zfl22"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -12807,8 +12849,11 @@ group by a.t_jz]]></Query>
 <C c="7" r="64" s="12">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="zfl222"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>

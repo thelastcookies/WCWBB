@@ -210,7 +210,7 @@ where wcw.t_time = '${time}']]></Query>
 <RowHeight defaultValue="723900">
 <![CDATA[1152000,1440000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,0,0,0,0,0,0,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[4896000,3168000,3168000,4896000,3168000,3168000,1728000,3168000,3168000,3168000,2743200]]></ColumnWidth>
+<![CDATA[5760000,3168000,3168000,4896000,3168000,3168000,1728000,3168000,3168000,3168000,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" cs="2" s="0">
 <O>
@@ -2526,7 +2526,7 @@ where wcw.t_time = '${time}']]></Query>
 </C>
 <C c="0" r="13" s="8">
 <O>
-<![CDATA[综合水耗]]></O>
+<![CDATA[综合水耗（吨）]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2724,7 +2724,7 @@ where wcw.t_time = '${time}']]></Query>
 </C>
 <C c="0" r="14" s="8">
 <O>
-<![CDATA[工业水来量]]></O>
+<![CDATA[工业水来量（吨）]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2928,7 +2928,7 @@ where wcw.t_time = '${time}']]></Query>
 </C>
 <C c="0" r="15" s="8">
 <O>
-<![CDATA[生活用水量]]></O>
+<![CDATA[生活用水量（吨）]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3132,7 +3132,7 @@ where wcw.t_time = '${time}']]></Query>
 </C>
 <C c="0" r="16" s="8">
 <O>
-<![CDATA[除盐水制水量]]></O>
+<![CDATA[除盐水制水量（吨）]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3336,7 +3336,7 @@ where wcw.t_time = '${time}']]></Query>
 </C>
 <C c="0" r="17" s="8">
 <O>
-<![CDATA[除盐水补水量]]></O>
+<![CDATA[除盐水补水量（吨）]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>

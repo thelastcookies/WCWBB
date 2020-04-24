@@ -2415,7 +2415,7 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 </C>
 <C c="2" r="13" s="7">
 <O>
-<![CDATA[%]]></O>
+<![CDATA[吨]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2643,7 +2643,7 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 </C>
 <C c="2" r="14" s="7">
 <O>
-<![CDATA[%]]></O>
+<![CDATA[吨]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>

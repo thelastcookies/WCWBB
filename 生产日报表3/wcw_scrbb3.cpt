@@ -594,8 +594,11 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="3" r="5" s="9">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl1"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -658,8 +661,11 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="4" r="5" s="9">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl11"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -722,8 +728,11 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="5" r="5" s="9">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl111"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -860,8 +869,11 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="3" r="6" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl2"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -924,8 +936,11 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="4" r="6" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl22"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -988,8 +1003,11 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="5" r="6" s="11">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl222"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -1126,8 +1144,11 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="3" r="7" s="13">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl3"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -1190,8 +1211,11 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="4" r="7" s="13">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl33"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -1254,8 +1278,11 @@ and year(t_time) = year('${time}')]]></Query>
 <C c="5" r="7" s="13">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="fdl333"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>

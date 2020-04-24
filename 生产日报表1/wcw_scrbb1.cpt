@@ -2415,7 +2415,7 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 </C>
 <C c="2" r="13" s="7">
 <O>
-<![CDATA[%]]></O>
+<![CDATA[吨]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2428,8 +2428,11 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <C c="4" r="13" s="9">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="zfl1"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -2643,7 +2646,7 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 </C>
 <C c="2" r="14" s="7">
 <O>
-<![CDATA[%]]></O>
+<![CDATA[吨]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2656,8 +2659,11 @@ setTimeout(function(){ location.reload(); }, 1000);]]></Content>
 <C c="4" r="14" s="10">
 <O t="DSColumn">
 <Attributes dsName="接口数据" columnName="zfl2"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10000]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
