@@ -358,8 +358,11 @@ where wcw.t_time = '${time}']]></Query>
 <C c="1" r="3" s="9">
 <O t="DSColumn">
 <Attributes dsName="程序1" columnName="fdl1"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -434,8 +437,11 @@ where wcw.t_time = '${time}']]></Query>
 <C c="4" r="3" s="10">
 <O t="DSColumn">
 <Attributes dsName="程序1" columnName="fdl11"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -510,8 +516,11 @@ where wcw.t_time = '${time}']]></Query>
 <C c="8" r="3" s="10">
 <O t="DSColumn">
 <Attributes dsName="程序1" columnName="fdl111"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -586,8 +595,11 @@ where wcw.t_time = '${time}']]></Query>
 <C c="1" r="4" s="11">
 <O t="DSColumn">
 <Attributes dsName="程序1" columnName="fdl2"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -662,8 +674,11 @@ where wcw.t_time = '${time}']]></Query>
 <C c="4" r="4" s="10">
 <O t="DSColumn">
 <Attributes dsName="程序1" columnName="fdl22"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -738,8 +753,11 @@ where wcw.t_time = '${time}']]></Query>
 <C c="8" r="4" s="10">
 <O t="DSColumn">
 <Attributes dsName="程序1" columnName="fdl222"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -814,8 +832,11 @@ where wcw.t_time = '${time}']]></Query>
 <C c="1" r="5" s="10">
 <O t="DSColumn">
 <Attributes dsName="程序1" columnName="fdl3"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -890,8 +911,11 @@ where wcw.t_time = '${time}']]></Query>
 <C c="4" r="5" s="10">
 <O t="DSColumn">
 <Attributes dsName="程序1" columnName="fdl33"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -966,8 +990,11 @@ where wcw.t_time = '${time}']]></Query>
 <C c="8" r="5" s="10">
 <O t="DSColumn">
 <Attributes dsName="程序1" columnName="fdl333"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$/10]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
